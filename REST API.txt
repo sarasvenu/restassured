@@ -104,3 +104,163 @@ Insert a Pet ID =>PetID
 Co-relation 
   fetch_Access_toekn => TokenID
 1. Get -> Access_Token
+=======================
+Testcase #1
+Request -> findByStatus
+Req Params -> sold  
+Req Method -> GET 
+------------>
+Response Code : 200 
+Response Body : JSON 
+	Process the response by passing Json Path $.[*].status => to fetch total sold setps
+============================================================================================
+Testcase #2
+Request URL / End Point url ->
+Request -> findByStatus
+Req Params -> available 
+Req Method -> GET 
+------------>
+Response Code : 200 
+Response Body : JSON 
+	Process the response by passing Json Path $.[*].status => to fetch total sold setps
+============================================================================================
+Testcase #3
+Request -> findByStatus
+Req Params -> pending 
+Req Method -> GET 
+------------>
+Response Code : 200 
+Response Body : JSON 
+	Process the response by passing Json Path $.[*].status => to fetch total sold setps
+============================================================================================
+Testcase #4
+Request -> findByStatus
+Req Params -> invalid 
+Req Method -> GET 
+------------>
+Response Code : 200 
+Response Body : JSON 
+	Process the response by passing Json Path $.[*].status => to fetch total sold setps
+============================================================================================
+Testcase #5
+Request -> pet -> Add a new pet to the store 
+Req Body->JSON 
+Request URL -> https://petstore.swagger.io/v2/pet/100
+Req Method -> POST 
+{
+  "id": 100,
+  "category": {
+    "id": 100,
+    "name": "string"
+  },
+  "name": "jimmy",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 100,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
+------------>
+Response Code : 200 
+Response Body : JSON 
+Trigger the fetch petstored by ID .
+	 
+============================================================================================
+Testcase #6
+Request -> pet -> update a pet store 
+Request URL -> https://petstore.swagger.io/v2/pet/100
+Req Method -> PUT 
+Req Body->JSON 
+{
+  "id": 100,
+  "category": {
+    "id": 100,
+    "name": "string"
+  },
+  "name": "jimmy",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 100,
+      "name": "string"
+    }
+  ],
+  "status": "sold"
+}
+------------>
+Response Code : 200 
+Response Body : JSON 
+Trigger and  fetch petstore by ID .
+	 
+=======================================================================
+Testcase #7
+Request -> pet -> delete a pet store 
+Request URL -> https://petstore.swagger.io/v2/pet/100
+Req Method -> DELETE 
+Req Params : 100
+------------>
+Response Code : 200 
+Response Body : JSON 
+Trigger and  fetch petstore by ID .
+{
+  "code": 1,
+  "type": "error",
+  "message": "Pet not found"
+}
+	 
+=======================================================================
+Today DB: MYSQL / NOSQL/BigQuery/Hadoop
+
+
+get()
+
+UI ->getPatientDetails()-> DB 
+
+UI -> No Change 
+	rest API methods will be changed 
+	DB
+
+UI->Change in UI 
+	rest API methods will not be changed 
+	DB 
+	
+Application :
+100 customers 
+	Functional Testing on UI 
+	Integration testing on UI 
+	System Testing on UI 
+	Rest API Testing 
+	Performace Testing 
+	Security Testing -Architecture
+	Accessibility
+	Language Testing 
+	Customer Acceptance Testing 
+	
+	
+
+UI -> register the Patient 
+RestAPI -> getPatientDetails(ID)
+
+HTTP Codes :
+
+400 Series
+400 Bad Request
+401: unauthorized
+402 Payment Required
+403 : Forbidden
+404: Page not found 
+
+500 Internal Server Error
+501 Not Implemented
+503 Service Unavailable
+504 Gateway Timeout
+
+
+ 
